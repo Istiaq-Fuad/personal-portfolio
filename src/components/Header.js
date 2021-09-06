@@ -13,11 +13,6 @@ import Footer from "./Footer";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-  // avatar: {
-  //   width: theme.spacing(15),
-  //   height: theme.spacing(15),
-  //   margin: theme.spacing(1),
-  // },
   title: {
     fontFamily: "Dancing Script",
     fontSize: "4.5rem",
@@ -27,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   subtitle: {
     color: "tomato",
     textTransform: "uppercase",
+    fontWeight:"600"
   },
   typedContainer: {
     position: "absolute",
@@ -37,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     zIndex: 1,
   },
+  btn:{
+    
+  }
 }));
 
 const Header = () => {
@@ -61,7 +60,7 @@ const Header = () => {
         <Typography className={classes.subtitle} variant="h5">
           Web developer
         </Typography>
-        <Button variant="outlined" color="primary">See Projects</Button>
+        <Button variant="outlined" color="primary" className={classes.btn}>See Projects</Button>
       </Grid>
     </Grid>
   );
