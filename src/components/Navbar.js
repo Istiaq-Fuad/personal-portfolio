@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
-import AppBar from "@material-ui/core/AppBar";
+// import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
@@ -11,7 +11,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
+// import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Home from "@material-ui/icons/Home";
@@ -21,7 +21,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../fuad.jpg";
 
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -29,40 +29,43 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
   },
   header: {
-    width: "95%",
+    height: "10vh",
+    width: "100%",
     margin: "auto",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
   },
   hamburger: {
     color: "#551111",
     fontSize: "2.5rem",
+    marginTop: "1rem",
   },
   clear: {
     fontSize: "2rem",
     color: "#d2b48c",
   },
   close: {
-    alignSelf: "flex-end",
-    marginRight: "2rem",
-    marginTop: "1rem",
+    position: "absolute",
+    top:"3%", 
+    right:"5%"
   },
   title: {
     color: "tan",
     textDecoration: "none",
   },
   menuSliderContainer: {
-    width: 350,
+    position: "relative",
+    width: 300,
     background: "#511",
     height: "100%",
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
   },
   avatar: {
     display: "block",
-    margin: "0.5rem auto",
+    marginBottom: "0.5rem",
     width: theme.spacing(13),
     height: theme.spacing(13),
   },
@@ -116,25 +119,25 @@ const Navbar = () => {
   return (
     <>
       <Box component="nav">
-        <AppBar position="static" className={classes.appbar}>
+        <div position="static" className={classes.appbar}>
           <Toolbar className={classes.header}>
-            <Typography
+            {/* <Typography
               component={Link}
               to="/"
               variant="h5"
               className={classes.title}
             >
               Fuad
-            </Typography>
+            </Typography> */}
             <IconButton onClick={() => setOpen(true)}>
               <MenuIcon className={classes.hamburger} />
             </IconButton>
           </Toolbar>
-        </AppBar>
+        </div>
       </Box>
       <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
         {sideList()}
-        <Footer />
+        {/* <Footer /> */}
       </Drawer>
     </>
   );

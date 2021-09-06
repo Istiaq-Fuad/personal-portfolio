@@ -1,20 +1,28 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
+// import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Typed from "react-typed";
+// import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import avatar from "../fuad1.jpg";
+// import avatar from "../fuad.jpg";
+// import List from "@material-ui/core/List";
+// import ListItem from "@material-ui/core/ListItem";
+// import ListItemIcon from "@material-ui/core/ListItemIcon";
+// import ListItemText from "@material-ui/core/ListItemText";
+import Footer from "./Footer";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
-  avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: theme.spacing(1),
-  },
+  // avatar: {
+  //   width: theme.spacing(15),
+  //   height: theme.spacing(15),
+  //   margin: theme.spacing(1),
+  // },
   title: {
-    color: "#551111",
+    fontFamily: "Dancing Script",
+    fontSize: "4.5rem",
+    fontWeight: "600",
+    color: "#25A0FF",
   },
   subtitle: {
     color: "tomato",
@@ -25,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    width: "100vw",
+    // width: "100vw",
     textAlign: "center",
     zIndex: 1,
   },
@@ -35,27 +43,27 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Box className={classes.typedContainer}>
-      <Grid container justify="center">
-        <Avatar className={classes.avatar} src={avatar} alt="Istiaq Fuad" />
+    <Grid container justifycontent="center" alignItems="center">
+      <Grid item>
+        <Footer />
       </Grid>
-      <Typography className={classes.title} variant="h4">
-        <Typed strings={["Istiaqur Rahman Fuad"]} typeSpeed={40} />
-      </Typography>
+      <Grid item className={classes.typedContainer}>
+        {/* <Grid container justify="center">
+        <Avatar className={classes.avatar} src={avatar} alt="Istiaq Fuad" />
+      </Grid> */}
+        <Typography className={classes.title} variant="h4">
+          Istiaqur Rahman
+          <br />
+          Fuad
+          {/* <Typed strings={["Istiaqur Rahman Fuad"]} typeSpeed={40} /> */}
+        </Typography>
 
-      <Typography className={classes.subtitle} variant="h5">
-        <Typed
-          strings={[
-            "Frontend Developer",
-            "Backend Developer",
-            "Native App Developer",
-          ]}
-          typeSpeed={25}
-          backSpeed={50}
-          loop
-        />
-      </Typography>
-    </Box>
+        <Typography className={classes.subtitle} variant="h5">
+          Web developer
+        </Typography>
+        <Button variant="outlined" color="primary">See Projects</Button>
+      </Grid>
+    </Grid>
   );
 };
 

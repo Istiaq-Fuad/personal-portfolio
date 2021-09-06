@@ -10,8 +10,8 @@ import Send from "@material-ui/icons/Send";
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
-    background: "#233",
-    height: "100vh",
+    background: "transparent",
+    height: "85vh",
   },
   heading: {
     color: "tomato",

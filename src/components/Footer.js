@@ -8,7 +8,18 @@ import Instagram from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles({
   bottomNavContainer: {
-    background: "#222",
+    background: "transparent",
+    display: "flex",
+    flexDirection: "column",
+    // justifyContent: "center",
+    // alignItems: "center",
+    height: "10vh",
+  },
+  socialIcon: {
+    height: "80vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center ",
   },
   root: {
     "& .MuiSvgIcon-root": {
@@ -25,11 +36,13 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <BottomNavigation className={classes.bottomNavContainer}>
-      <BottomNavigationAction icon={<Facebook />} className={classes.root} />
-      <BottomNavigationAction icon={<Twitter />} className={classes.root} />
-      <BottomNavigationAction icon={<Instagram />} className={classes.root} />
-    </BottomNavigation>
+    <div className={classes.socialIcon}>
+      <BottomNavigation className={classes.bottomNavContainer}>
+        <BottomNavigationAction icon={<Facebook />} className={classes.root} />
+        <BottomNavigationAction icon={<Twitter />} className={classes.root} />
+        <BottomNavigationAction icon={<Instagram />} className={classes.root} />
+      </BottomNavigation>
+    </div>
   );
 };
 export default Footer;
